@@ -1,0 +1,81 @@
+{
+    "Format": "1.29.0",
+    "DynamicTokens": [
+
+        //Spritesheets
+        {
+            "Name": "Style",
+            "Value": "Vanilla"
+        },
+        {
+            "Name": "Style",
+            "Value": "SVE",
+            "When": {
+                "HasMod|contains=FlashShifter.StardewValleyExpandedCP": true
+            }
+        },
+        {
+            "Name": "Style",
+            "Value": "RomRas",
+            "When": {
+                "HasMod|contains=wolf.RomRas, Parrot.RomRas, foggy.LfL": true
+            }
+        },
+
+        //Portraits
+        {
+            "Name": "Expressions",
+            "Value": "2Expressions"
+        },
+        {
+            "Name": "Expressions",
+            "Value": "12Expressions",
+            "When": {
+                "HasMod|contains=foggy.Lfl": true
+            }
+        },
+        {
+            "Name": "Expressions",
+            "Value": "7Expressions",
+            "When": {
+                "HasMod|contains=FlashShifter.StardewValleyExpandedCP": true
+            }
+        },
+        {
+            "Name": "Expressions",
+            "Value": "9Expressions",
+            "When": {
+                "HasMod|contains=wolf.RomRas, Parrot.RomRas": true,
+            }
+        }
+    ],
+
+    "Changes": [
+        {
+            "LogName": "Sprites",
+            "Action": "EditImage",
+            "Target": "Characters/Wizard",
+            "FromFile": "Assets/{{Target}}_{{Style}}.png"
+        },
+        {
+            "LogName": "Portraits",
+            "Action": "EditImage",
+            "Target": "Portraits/Wizard",
+            "FromFile": "Assets/{{Target}}_{{Expressions}}.png"
+        },
+        {
+            "LogName": "Perfection Cutscene",
+            "Action": "EditImage",
+            "Target": "Characters/KrobusRaven",
+            "FromFile": "Assets/{{Target}}.png",
+            "ToArea": { "X": 0, "Y": 64, "Width": 128, "Height": 39 }
+        },
+        {
+            "LogName": "Emoji",
+            "Action": "EditImage",
+            "Target": "LooseSprites/emojis",
+            "FromFile": "Assets/{{Target}}.png",
+            "ToArea": { "X": 90, "Y": 108, "Width": 9, "Height": 9 }
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "Name": "Creepy Forest Druid Rasmodius",
+    "Author": "Vinilla",
+    "Version": "1.0.0",
+    "Description": "Gives the wizard some new portraits and sprites that reimagine him as a creepy forest druid.",
+    "UniqueID": "VinillaBean.CreepyWizard",
+    "UpdateKeys": [ "Nexus:18495" ],
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher"
+    },
+    "Dependencies": [
+        {
+            "UniqueID": "foggy.LfL",
+            "IsRequired": false
+        },
+        {
+            "UniqueID": "FlashShifter.StardewValleyExpandedCP",
+            "IsRequired": false
+        },
+        {
+            "UniqueID": "wolf.RomRas",
+            "IsRequired": false
+        },
+        {
+            "UniqueID": "Parrot.RomRas",
+            "IsRequired": false
+        }
+    ]
+}
