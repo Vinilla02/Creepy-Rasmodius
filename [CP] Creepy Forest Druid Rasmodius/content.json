@@ -1,81 +1,285 @@
 {
-    "Format": "1.29.0",
-    "DynamicTokens": [
-
-        //Spritesheets
-        {
-            "Name": "Style",
-            "Value": "Vanilla"
-        },
-        {
-            "Name": "Style",
-            "Value": "SVE",
-            "When": {
-                "HasMod|contains=FlashShifter.StardewValleyExpandedCP": true
-            }
-        },
-        {
-            "Name": "Style",
-            "Value": "RomRas",
-            "When": {
-                "HasMod|contains=wolf.RomRas, Parrot.RomRas, foggy.LfL": true
-            }
-        },
-
-        //Portraits
-        {
-            "Name": "Expressions",
-            "Value": "2Expressions"
-        },
-        {
-            "Name": "Expressions",
-            "Value": "12Expressions",
-            "When": {
-                "HasMod|contains=foggy.Lfl": true
-            }
-        },
-        {
-            "Name": "Expressions",
-            "Value": "7Expressions",
-            "When": {
-                "HasMod|contains=FlashShifter.StardewValleyExpandedCP": true
-            }
-        },
-        {
-            "Name": "Expressions",
-            "Value": "9Expressions",
-            "When": {
-                "HasMod|contains=wolf.RomRas, Parrot.RomRas": true,
-            }
-        }
-    ],
-
-    "Changes": [
-        {
-            "LogName": "Sprites",
-            "Action": "EditImage",
-            "Target": "Characters/Wizard",
-            "FromFile": "Assets/{{Target}}_{{Style}}.png"
-        },
-        {
-            "LogName": "Portraits",
-            "Action": "EditImage",
-            "Target": "Portraits/Wizard",
-            "FromFile": "Assets/{{Target}}_{{Expressions}}.png"
-        },
-        {
-            "LogName": "Perfection Cutscene",
-            "Action": "EditImage",
-            "Target": "Characters/KrobusRaven",
-            "FromFile": "Assets/{{Target}}.png",
-            "ToArea": { "X": 0, "Y": 64, "Width": 128, "Height": 39 }
-        },
-        {
-            "LogName": "Emoji",
-            "Action": "EditImage",
-            "Target": "LooseSprites/emojis",
-            "FromFile": "Assets/{{Target}}.png",
-            "ToArea": { "X": 90, "Y": 108, "Width": 9, "Height": 9 }
-        }
-    ]
+  "Format": "2.8.0",
+  "DynamicTokens": [
+    //Portraits
+    {
+      "Name": "Portrait",
+      "Value": "Vanilla"
+    },
+    {
+      "Name": "Portrait",
+      "Value": "LfL",
+      "When": {
+        "HasMod|contains=foggy.Lfl, mush.loveydovey": true
+      }
+    },
+    {
+      "Name": "Portrait",
+      "Value": "SVE",
+      "When": {
+        "HasMod": "FlashShifter.StardewValleyExpandedCP"
+      }
+    },
+    {
+      "Name": "Portrait",
+      "Value": "RomRas",
+      "When": {
+        "Query: '{{Spiderbuttons.CMCT/Config: Wolf.RomRas, Portrait Mode |contains= 9 Expressions, NineExpressions}}' = 'true'": true
+      }
+    },
+    {
+      "Name": "Portrait",
+      "Value": "RomRas",
+      "When": {
+        "Query: '{{Spiderbuttons.CMCT/Config: Parrot.RomRas, Portrait Mode}}' = '9'": true
+      }
+    },
+    {
+      "Name": "Portrait",
+      "Value": "LfL",
+      "When": {
+        "Query: '{{Spiderbuttons.CMCT/Config: Parrot.RomRas, Portrait Mode}}' = '12'": true,
+      }
+    },
+    {
+      "Name": "Portrait",
+      "Value": "SVE_RomRas_12",
+      "When": {
+        "Query: '{{Spiderbuttons.CMCT/Config: Parrot.RomRas, Portrait Mode}}' = '12'": true,
+        "HasMod": "Nom0ri.RomRas"
+      }
+    },
+    {
+      "Name": "Portrait",
+      "Value": "SVE_RomRas_12",
+      "When": {
+        "HasMod|contains=foggy.Lfl, mush.loveydovey": true,
+        "HasMod": "Nom0ri.RomRas"
+      }
+    },
+    //Spritesheets
+    {
+      "Name": "Spritesheet",
+      "Value": "Vanilla",
+    },
+    {
+      "Name": "Spritesheet",
+      "Value": "RomRas",
+      "When": {
+        "HasMod|contains=foggy.LfL, Wolf.RomRas": true 
+      }
+    },
+    {
+      "Name": "Spritesheet",
+      "Value": "SVE",
+      "When": {
+        "HasMod": "FlashShifter.StardewValleyExpandedCP"
+      }
+    },
+    //Gender
+    {
+      "Name": "Gender",
+      "Value": "Male"
+    },
+    {
+      "Name": "Gender",
+      "Value": "Female",
+      "When": {
+        "HasMod": "Nom0ri.RomRas"
+      }
+    },
+    {
+      "Name": "Gender",
+      "Value": "Female",
+      "When": {
+        "HasFlag": "DSVTeam.DiverseStardewValley_DSVWizardFemale",
+        "Query: '{{Spiderbuttons.CMCT/Config: DSV.Core, GenderfluidWizard}}' = 'True'": true
+      }
+    },
+    //Spouse portrait mods
+    {
+      "Name": "SPR",
+      "Value": "",
+      "When": {
+        "HasMod|contains=Hitme.SpousePortraitsReworked": false
+      }
+    },
+    {
+      "Name": "SPR",
+      "Value": "SPR_",
+      "When": {
+        "HasMod": "Hitme.SpousePortraitsReworked"
+      }
+    },
+    {
+      "Name": "SPRVariant",
+      "Value": "",
+      "When": {
+        "HasMod|contains=Hitme.SpousePortraitsReworked": false
+      }
+    },
+    {
+      "Name": "SPRVariant",
+      "Value": "{{Spiderbuttons.CMCT/Config: Hitme.SpousePortraitsReworked, WizardVariation}}",
+      "When": {
+        "HasMod": "Hitme.SpousePortraitsReworked"
+      }
+    },
+    {
+      "Name": "SPRRecolor",
+      "Value": "",
+    },
+    {
+      "Name": "SPRRecolor",
+      "Value": "_TonedDown",
+      "When": {
+        "Query: '{{Spiderbuttons.CMCT/Config: Hitme.SpousePortraitsReworked, PortraitRecolor}}' = 'Tonedown'": true
+      }
+    }
+  ],
+  "Changes": [
+    {
+      "LogName": "Sprites",
+      "Action": "EditImage",
+      "Target": "Characters/Wizard, Characters/Wizard_Seasonal, Characters/Wizard_SpiritsEve, Characters/Wizard_WizardGender",
+      "FromFile": "Assets/{{Gender}}/Characters/Wizard_{{Spritesheet}}.png",
+      "Priority": "Late + 10"
+    },
+    {
+      "LogName": "Portraits",
+      "Action": "EditImage",
+      "Target": "Portraits/Wizard, Portraits/Wizard_Seasonal, Portraits/Wizard_SpiritsEve, Portraits/Wizard_WizardGender",
+      "FromFile": "Assets/{{Gender}}/Portraits/Wizard_{{Portrait}}.png",
+      "Priority": "Late + 10"
+    },
+    {
+      "LogName": "Robe Sprites",
+      "Action": "EditImage",
+      "Target": "Characters/Wizard_NewRobe",
+      "FromFile": "Assets/{{Gender}}/Characters/Wizard_{{Portrait}}_robe.png",
+      "When": {
+        "HasMod": "Inmognito.wizrobe",
+        "HasMod|contains=FlashShifter.StardewValleyExpandedCP,Nom0ri.RomRas": false
+      },
+      "Priority": "Late + 10",
+    },
+    {
+      "LogName": "Robe Portraits",
+      "Action": "EditImage",
+      "Target": "Portraits/Wizard_NewRobe",
+      "FromFile": "Assets/{{Gender}}/Portraits/Wizard_{{Portrait}}_robe.png",
+      "When": {
+        "HasMod": "Inmognito.wizrobe",
+        "HasMod|contains=FlashShifter.StardewValleyExpandedCP,Nom0ri.RomRas": false
+      },
+      "Priority": "Late + 10"
+    },
+    {
+      "LogName": "Perfection Cutscene",
+      "Action": "EditImage",
+      "Target": "Characters/KrobusRaven",
+      "FromFile": "Assets/{{Gender}}/{{Target}}.png",
+      "ToArea": {
+        "X": 0,
+        "Y": 64,
+        "Width": 128,
+        "Height": 39
+      },
+      "Priority": "Late + 10"
+    },
+    {
+      "LogName": "Emoji",
+      "Action": "EditImage",
+      "Target": "LooseSprites/emojis",
+      "FromFile": "Assets/{{Gender}}/Misc/emojis.png",
+      "ToArea": {
+        "X": 90,
+        "Y": 108,
+        "Width": 9,
+        "Height": 9
+      },
+      "Priority": "Late + 10"
+    },
+    //Rasmodia Appearances
+    {
+      "LogName": "Rasmodia Beach Sprites",
+      "Action": "EditImage",
+      "Target": "Characters/Wizard_Beach, Portraits/Wizard_Beach",
+      "FromFile": "Assets/Female/{{Target}}.png",
+      "When": {
+        "HasMod": "Nom0ri.RomRas"
+      },
+      "Priority": "Late + 10"
+    },
+    {
+      "LogName": "Rasmodia Flower Dance",
+      "Action": "EditImage",
+      "Target": "Characters/Rasmodia_FlowerDance, Portraits/Rasmodia_FlowerDance",
+      "FromFile": "Assets/Female/{{TargetPathOnly}}/Wizard_FlowerDance.png",
+      "When": {
+        "HasMod": "Nom0ri.RomRas"
+      },
+      "Priority": "Late + 10"
+    },
+    //Furniture Portraits
+    {
+      "LogName": "Vanilla Non-Marriageable NPC Portraits",
+      "Action": "EditImage",
+      "Target": "Mods/Acc9000.VanillaNPCportraits/vanillaNPCs",
+      "FromFile": "Assets/{{Gender}}/Misc/Portrait.png",
+      "ToArea": {
+        "X": 135,
+        "Y": 71,
+        "Width": 18,
+        "Height": 18
+      },
+      "When": {
+        "HasMod": "Acc9000.VanillaNPCportraits"
+      },
+      "Priority": "Late + 10"
+    },
+    {
+      "LogName": "Vanilla Group Portraits",
+      "Action": "EditImage",
+      "Target": "Mods/Acc9000.vanillaNPCfamgr/vanillaNPCfamgr",
+      "FromFile": "Assets/{{Gender}}/Misc/VanillaGroupPortraits.png",
+      "PatchMode": "Overlay",
+      "When": {
+        "HasMod": "Acc9000.vanillaNPCfamgr"
+      },
+      "Priority": "Late + 10"
+    },
+    {
+      "LogName": "SVE Spouse Portrait",
+      "Action": "EditImage",
+      "Target": "Mods/FlashShifter.StardewValleyExpandedCP/SVE_Portraits",
+      "FromFile": "Assets/{{Gender}}/Misc/{{SPR}}Portrait{{SPRVariant}}{{SPRRecolor}}.png",
+      "ToArea": {
+        "X": 135,
+        "Y": 7,
+        "Width": 18,
+        "Height": 18
+      },
+      "When": {
+        "HasMod": "FlashShifter.StardewValleyExpandedCP"
+      },
+      "Priority": "Late + 10"
+    },
+    {
+      "LogName": "RomRas Spouse Portrait",
+      "Action": "EditImage",
+      "Target": "Mods/Wolf.RomRas/Rasmodius_Portrait",
+      "FromFile": "Assets/{{Gender}}/Misc/{{SPR}}Portrait{{SPRVariant}}{{SPRRecolor}}.png",
+      "ToArea": {
+        "X": 7,
+        "Y": 7,
+        "Width": 18,
+        "Height": 18
+      },
+      "When": {
+        "HasMod": "Wolf.RomRas"
+      },
+      "Priority": "Late + 10"
+    },
+  ]
 }

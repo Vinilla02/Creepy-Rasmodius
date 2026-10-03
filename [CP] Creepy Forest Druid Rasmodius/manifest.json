@@ -1,29 +1,43 @@
 {
-    "Name": "Creepy Forest Druid Rasmodius",
-    "Author": "Vinilla",
-    "Version": "1.0.0",
-    "Description": "Gives the wizard some new portraits and sprites that reimagine him as a creepy forest druid.",
-    "UniqueID": "VinillaBean.CreepyWizard",
-    "UpdateKeys": [ "Nexus:18495" ],
-    "ContentPackFor": {
-        "UniqueID": "Pathoschild.ContentPatcher"
+  "Name": "Creepy Forest Druid Rasmodius",
+  "Author": "Vinilla",
+  "Version": "2.0.0",
+  "Description": "Gives the wizard some new portraits and sprites that reimagine him (or her) as a creepy forest druid.",
+  "UniqueID": "VinillaBean.CreepyWizard",
+  "UpdateKeys": [
+    "Nexus:18495"
+  ],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  },
+  "Dependencies": [
+    {
+      "UniqueID": "Spiderbuttons.CMCT",
+      "IsRequired": true
     },
-    "Dependencies": [
-        {
-            "UniqueID": "foggy.LfL",
-            "IsRequired": false
-        },
-        {
-            "UniqueID": "FlashShifter.StardewValleyExpandedCP",
-            "IsRequired": false
-        },
-        {
-            "UniqueID": "wolf.RomRas",
-            "IsRequired": false
-        },
-        {
-            "UniqueID": "Parrot.RomRas",
-            "IsRequired": false
-        }
-    ]
+    {
+      "UniqueID": "foggy.LfL",
+      "IsRequired": false
+    },
+    {
+      "UniqueID": "FlashShifter.StardewValleyExpandedCP",
+      "IsRequired": false
+    },
+    {
+      "UniqueID": "wolf.RomRas",
+      "IsRequired": false
+    },
+    {
+      "UniqueID": "Parrot.RomRas",
+      "IsRequired": false
+    },
+    {
+      "UniqueID": "DSVTeam.DiverseStardewValley",
+      "IsRequired": false
+    },
+    {
+      "UniqueID": "Hitme.SpousePortraitsReworked",
+      "IsRequired": false
+    }
+  ]
 }
