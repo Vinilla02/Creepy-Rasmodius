@@ -1,5 +1,11 @@
 {
   "Format": "2.8.0",
+  "ConfigSchema": {
+    "Style": {
+      "AllowValues": "Original,Nyapu",
+      "Default": "Original"
+    }
+  },
   "DynamicTokens": [
     //Portraits
     {
@@ -149,7 +155,7 @@
       "LogName": "Portraits",
       "Action": "EditImage",
       "Target": "Portraits/Wizard, Portraits/Wizard_Seasonal, Portraits/Wizard_SpiritsEve, Portraits/Wizard_WizardGender",
-      "FromFile": "Assets/{{Gender}}/Portraits/Wizard_{{Portrait}}.png",
+      "FromFile": "Assets/{{Gender}}/Portraits/{{Style}}/Wizard_{{Portrait}}.png",
       "Priority": "Late + 10"
     },
     {
@@ -167,7 +173,7 @@
       "LogName": "Robe Portraits",
       "Action": "EditImage",
       "Target": "Portraits/Wizard_NewRobe",
-      "FromFile": "Assets/{{Gender}}/Portraits/Wizard_{{Portrait}}_robe.png",
+      "FromFile": "Assets/{{Gender}}/Portraits/{{Style}}/Wizard_{{Portrait}}_robe.png",
       "When": {
         "HasMod": "Inmognito.wizrobe",
         "HasMod|contains=FlashShifter.StardewValleyExpandedCP,Nom0ri.RomRas": false
@@ -204,7 +210,7 @@
     {
       "LogName": "Rasmodia Beach Sprites",
       "Action": "EditImage",
-      "Target": "Characters/Wizard_Beach, Portraits/Wizard_Beach",
+      "Target": "Characters/Wizard_Beach",
       "FromFile": "Assets/Female/{{Target}}.png",
       "When": {
         "HasMod": "Nom0ri.RomRas"
@@ -212,10 +218,30 @@
       "Priority": "Late + 10"
     },
     {
-      "LogName": "Rasmodia Flower Dance",
+      "LogName": "Rasmodia Beach Portraits",
       "Action": "EditImage",
-      "Target": "Characters/Rasmodia_FlowerDance, Portraits/Rasmodia_FlowerDance",
-      "FromFile": "Assets/Female/{{TargetPathOnly}}/Wizard_FlowerDance.png",
+      "Target": "Portraits/Wizard_Beach",
+      "FromFile": "Assets/Female/Portraits/{{Style}}/Wizard_Beach.png",
+      "When": {
+        "HasMod": "Nom0ri.RomRas"
+      },
+      "Priority": "Late + 10"
+    },
+    {
+      "LogName": "Rasmodia Flower Dance Sprites",
+      "Action": "EditImage",
+      "Target": "Characters/Rasmodia_FlowerDance",
+      "FromFile": "Assets/Female/Characters/Wizard_FlowerDance.png",
+      "When": {
+        "HasMod": "Nom0ri.RomRas"
+      },
+      "Priority": "Late + 10"
+    },
+    {
+      "LogName": "Rasmodia Flower Dance Portraits",
+      "Action": "EditImage",
+      "Target": "Portraits/Rasmodia_FlowerDance",
+      "FromFile": "Assets/Female/Portraits/{{Style}}/Wizard_FlowerDance.png",
       "When": {
         "HasMod": "Nom0ri.RomRas"
       },
